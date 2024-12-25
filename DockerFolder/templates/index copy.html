@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Todo List</title> 
+</head> 
+<body> 
+	<h1>Lista de Permisos</h1> 
+	<form action="/add_task" method="POST"> 
+		<input type="text" name="task_name" placeholder="Task name"> 
+		<button type="submit">Add Task</button> 
+	</form> 
+    <table border="1">
+
+        <tr>
+            <th>Nombre del archivo</th>
+            
+            <th>F. Creacion</th>
+            <th>F. Modificacion</th>
+            <th>Tamaño</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task[0] }}</td>
+
+            <td>{{ task[3] }}</td>
+            <td>{{ task[4] }}</td>
+            <td>{{ task[5] }}</td>
+
+            
+            
+            {% if task[8] == "True" %}
+            <td><a href="/delete_task/{{ task._id }}">Copy</a></td>
+            {% else %}
+            <td>LOCAL</td>
+            {% endif %}
+
+            <td><a href="/delete_task/{{ task._id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body> 
+</html> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Todo List</title> 
+</head> 
+<body> 
+	<h1>Sistema Distribuido</h1> 
+
+    <button>
+        <a href="/">ACTUALIZAR</a>
+    </button>
+
+	<table border="1">
+        <thead>
+            <tr>
+                <th>Nombre del archivo</th>
+                <th>F. Creacion</th>
+                <th>F. Modificacion</th>
+                <th>Tamaño</th>
+                <th>Copiar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task[0] }}</td>
+                    <!-- <td>{{ task[1] }}</td>
+                    <td>{{ task[2] }}</td> -->
+                    <td>{{ task[3] }}</td>
+                    <td>{{ task[4] }}</td>
+                    <td>{{ task[5] }}</td>
+                    <!-- <td>{{ task[6] }}</td>
+                    <td>{{ task[7] }}</td>
+                    <td>{{ task[8] }}</td> -->
+
+                    {% if task[8] == "True" %}
+                        <td>local</td>
+                    {% else %}
+                        <td><a href="/copy_task/{{ task[0] }}/{{ task[10] }}">Copy</a></td>
+                        
+                    {% endif %}
+                    <td><a href="/delete_task/{{ task[0] }}/{{ task[10] }}">Delete</a></td> 
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body> 
+</html> 

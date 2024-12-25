@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: ["python", "-u", "app.py"]
+    ports:
+      - "5000:5000"
+      - "9092:9092"
+      - "9091:9091"
+      - "9095:9095"
+    volumes:
+      - .:/app
+      - C:/Users/GR/Desktop/Proyect arn/DockerFolder/URI:/app/URI
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge

@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Todo List</title> 
+</head> 
+<body> 
+	<h1>Lista de Permisos</h1> 
+    <form action="/procesar_seleccion" method="post">
+        <table border="1">
+            <tr>
+                <th>Nombre del archivo</th>
+                <th>Compartir</th>
+            </tr>
+            <tr>
+                <td>{{ task[0] }}</td>
+                <td>
+                    <select id="opcion" name="opcion">
+                    <!-- <select id="opcion" name="opcion{{ counter }}"> -->
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+    
+
+</body> 
+</html> 
